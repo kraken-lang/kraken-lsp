@@ -1,0 +1,42 @@
+#####################################################
+#  ▗▖ ▄▖          ▗▖             
+#  ▐▌▐▛           ▐▌             
+#  ▐▙█   █▟█▌ ▟██▖▐▌▟▛  ▟█▙ ▐▙██▖
+#  ▐██   █▘   ▘▄▟▌▐▙█  ▐▙▄▟▌▐▛ ▐▌
+#  ▐▌▐▙  █   ▗█▀▜▌▐▛█▖ ▐▛▀▀▘▐▌ ▐▌
+#  ▐▌ █▖ █   ▐▙▄█▌▐▌▝▙ ▝█▄▄▌▐▌ ▐▌
+#  ▝▘ ▝▘ ▀    ▀▀▝▘▝▘ ▀▘ ▝▀▀ ▝▘ ▝▘
+#
+#####################################################
+[package]
+#####################################################
+name = "kraken-lsp"
+version = "0.8.42"
+description = "Language Server Protocol implementation for the Kraken programming language"
+authors = ["James Gober <code@jamesgober.dev>"]
+license = "Apache-2.0"
+readme = "README.md"
+keywords = ["lsp", "language-server", "kraken", "ide"]
+categories = ["development-tools", "text-editors"]
+repository = "https://github.com/kraken-lang/kraken-lsp"
+homepage = "https://github.com/kraken-lang/kraken-lsp"
+edition = "2021"
+rust-version = "1.80"
+
+[[bin]]
+name = "kraken-lsp"
+path = "src/main.rs"
+
+[dependencies]
+tower-lsp = "0.20"
+tokio = { version = "1.40", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+dashmap = "5.5"
+anyhow = "1.0"
+thiserror = "1.0"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+[dev-dependencies]
+tokio-test = "0.4"
