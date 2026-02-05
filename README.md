@@ -5,7 +5,7 @@
 
 Language Server Protocol implementation for the Kraken programming language. Provides IDE features like auto-completion, diagnostics, go-to-definition, and more.
 
-Current version: `v0.8.42`
+**Version:** `v0.8.42` — This repo tracks the Kraken compiler version. Tags match compiler tags. Breaking grammar or LSP changes bump together.
 
 ## Features
 
@@ -18,6 +18,21 @@ The Kraken LSP server provides intelligent code assistance for Kraken developmen
 - **Find References**: Locate all usages of a symbol across your codebase
 - **Document Symbols**: Outline view showing functions, structs, and other declarations
 - **Semantic Highlighting**: Enhanced syntax coloring based on semantic analysis
+
+## Implementation Status
+
+| Feature | Status | Notes |
+|---------|--------|-------|
+| Completion | 🟡 Stubbed | Basic keywords and types; context-aware completion planned |
+| Diagnostics | 🟡 Stubbed | Simple pattern matching; compiler integration planned |
+| Hover | 🟡 Stubbed | Placeholder responses; semantic info planned |
+| Go to Definition | 🟡 Stubbed | Not yet functional; requires symbol indexing |
+| Find References | 🟡 Stubbed | Not yet functional; requires symbol indexing |
+| Document Symbols | 🟡 Stubbed | Not yet functional; requires AST traversal |
+| Semantic Tokens | ✅ Advertised | Capability registered; implementation in progress |
+| Text Sync | ✅ Implemented | Full document synchronization working |
+
+**Legend:** ✅ Implemented · 🟡 Stubbed · 🔜 Planned
 
 ## Installation
 
@@ -217,15 +232,17 @@ The server is designed for high performance:
 - Incremental parsing (planned)
 - Lazy analysis to minimize latency
 
-Typical response times:
+**Performance Goals:**
 - Completion: < 10ms
 - Hover: < 5ms
-- Diagnostics: < 50ms (depends on file size)
+- Diagnostics: < 50ms (file-size dependent)
+
+*Note: Benchmarks and profiling harness are planned. Current implementation focuses on correctness over optimization.*
 
 ## Roadmap
 
 ### Near-term
-- Integration with Kraken compiler for full semantic analysis
+- **Compiler integration**: Library embedding or process bridge for semantic analysis
 - Signature help for function parameters
 - Code actions (quick fixes, refactorings)
 - Document formatting
@@ -236,6 +253,14 @@ Typical response times:
 - Inlay hints for type information
 - Call hierarchy and type hierarchy
 - Debug adapter protocol support
+
+## Architecture Notes
+
+**Semantic Source of Truth:**
+The LSP will integrate with the Kraken compiler for full semantic analysis. Current approach:
+- **Phase 1** (current): Tree-sitter parse + lightweight symbol indexing for fast responses
+- **Phase 2** (planned): Compiler library embedding for accurate diagnostics and semantic tokens
+- **Phase 3** (future): Hybrid model with incremental compilation and caching
 
 ## Compatibility
 
