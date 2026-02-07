@@ -11,7 +11,7 @@
 [package]
 #####################################################
 name = "kraken-lsp"
-version = "0.8.42"
+version = "0.9.2"
 description = "Language Server Protocol implementation for the Kraken programming language"
 authors = ["James Gober <code@jamesgober.dev>"]
 license = "Apache-2.0"

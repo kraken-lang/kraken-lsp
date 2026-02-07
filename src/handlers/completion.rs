@@ -6,7 +6,9 @@ pub fn provide_completions(_doc: &Document) -> Vec<CompletionItem> {
 
     let keywords = vec![
         "fn", "let", "mut", "const", "if", "else", "while", "for", "in", "match", "return",
-        "struct", "enum", "impl", "trait", "type", "unsafe", "move", "async", "await", "dyn",
+        "break", "continue", "defer", "struct", "enum", "union", "class", "interface", "impl",
+        "trait", "type", "unsafe", "move", "async", "await", "spawn", "dyn", "pub", "import",
+        "module", "where", "static_assert", "null",
     ];
 
     for keyword in keywords {
@@ -18,7 +20,7 @@ pub fn provide_completions(_doc: &Document) -> Vec<CompletionItem> {
         });
     }
 
-    let types = vec!["int", "float", "bool", "string", "void"];
+    let types = vec!["int", "float", "bool", "string", "str", "bytes", "void"];
 
     for type_name in types {
         completions.push(CompletionItem {

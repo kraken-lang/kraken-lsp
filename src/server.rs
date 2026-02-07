@@ -66,7 +66,7 @@ impl LanguageServer for KrakenLanguageServer {
             },
             server_info: Some(ServerInfo {
                 name: "kraken-lsp".to_string(),
-                version: Some("0.8.42".to_string()),
+                version: Some("0.9.2".to_string()),
             }),
         })
     }

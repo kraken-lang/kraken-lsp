@@ -5,7 +5,7 @@
 
 Language Server Protocol implementation for the Kraken programming language. Provides IDE features like auto-completion, diagnostics, go-to-definition, and more.
 
-**Version:** `v0.8.42` — This repo tracks the Kraken compiler version. Tags match compiler tags. Breaking grammar or LSP changes bump together.
+**Version:** `v0.9.2` — This repo tracks the Kraken language version. Tags match compiler tags.
 
 ## Features
 
@@ -264,7 +264,7 @@ The LSP will integrate with the Kraken compiler for full semantic analysis. Curr
 
 ## Compatibility
 
-This language server tracks the Kraken compiler version. Version 0.8.42 supports all language features in Kraken v0.8.42.
+This language server tracks the Kraken language version. Version 0.9.2 supports all language features in Kraken v0.9.2.
 
 ## Contributing
 
